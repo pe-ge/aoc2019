@@ -1,12 +1,10 @@
-from math import floor
-
 data = open('1.txt').read().split()
 
 s = 0
 for n in data:
     n = int(n)
     while True:
-        n = floor(n / 3) - 2
+        n = n // 3 - 2
         if n < 0:
             break
         s += n
