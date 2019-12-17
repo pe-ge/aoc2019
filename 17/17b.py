@@ -21,7 +21,6 @@ main = 'A,B,A,C,B,A,C,B,A,C\n'
 
 inputs = main + A + B + C + 'n\n'
 input_idx = 0
-inst_idx = 0
 
 ip = 0
 rb = 0
@@ -70,12 +69,9 @@ while program[ip] != 99:
         program[output_address] = result
         ip += 4
     elif instruction == 3:
-        input_value = inputs[input_idx][inst_idx]
+        input_value = inputs[input_idx]
         input_value = ord(input_value)
-        inst_idx += 1
-        if inst_idx == len(inputs[input_idx]):
-            input_idx += 1
-            inst_idx = 0
+        input_idx += 1
         input_address = program[ip+1]
         if parameter_mode[0] == 2:
             input_address += rb
