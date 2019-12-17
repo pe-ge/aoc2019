@@ -13,13 +13,13 @@ def interpret_opcode(opcode):
 
     return instruction, parameter_mode
 
-A = ['L',',','1','2',',','L',',','1','2',',','L',',','6',',','L',',','6',chr(10)]
-B = ['R',',','8',',','R',',','4',',','L',',','1','2',chr(10)]
-C = ['L',',','1','2',',','L',',','6',',','R',',','1','2',',','R',',','8',chr(10)]
-cmd = ['A',',','B',',','A',',','C',',','B',',','A',',','C',',','B',',','A',',','C', chr(10)]
-no_answer = ['n',chr(10)]
+# from 17b-simulator
+A = 'L,12,L,12,L,6,L,6\n'
+B = 'R,8,R,4,L,12\n'
+C = 'L,12,L,6,R,12,R,8\n'
+main = 'A,B,A,C,B,A,C,B,A,C\n'
 
-inputs = [cmd, A, B, C, no_answer]
+inputs = main + A + B + C + 'n\n'
 input_idx = 0
 inst_idx = 0
 
